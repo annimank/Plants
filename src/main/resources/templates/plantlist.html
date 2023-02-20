@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Booklist</title>
+	<meta http-equiv="Content-Type" content="text/html" charset=UTF-8/>
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+
+<body>
+	<h1>Books</h1>
+	
+	<table class="table table-striped">
+		<tbody>
+			<tr>
+				<td align="center"><b>Title</b></td>
+				<td align="center"><b>Author</b></td>
+				<td align="center" colspan="2"><b> </b></td>
+			</tr>
+			
+			<tr th:each = "plant : ${plants}">
+				<td align="center" th:text="${plant.nameEng}"></td>
+				<td align="center" th:text="${plant.nameLat}"></td>
+
+				<!-- <td><a th:href="@{/delete/{id}(id=${book.id})}" class="btn btn-danger">Delete</a></td>
+				<td><a th:href="@{/editbook/{id}(id=${book.id})}">Edit</a></td> -->
+			</tr>
+		</tbody>
+	</table>
+	<!-- <p><a href="/add" class="btn btn-success">Add a Book</a></p> -->
+</body>
+</html>
